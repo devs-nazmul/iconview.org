@@ -1,5 +1,5 @@
 export default async function serverFetch(search) {
-    let url = `api.iconview.org/search?icon=${search}`;
+    let url = `https://api.iconview.org/search?icon=${search}`;
 
     try {
         const res = await fetch(url, {

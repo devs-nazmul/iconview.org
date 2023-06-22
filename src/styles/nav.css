@@ -1,0 +1,78 @@
+
+
+.header{
+    background-color: var(--lightBlue);
+
+}
+
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15rem;
+
+}
+
+.search_text{
+    color: var(--darkBlue);
+    font-size: 17rem;
+}
+
+.items{
+    display: flex;
+    align-items: center;
+    column-gap: 30rem;
+    color: var(--darkBlue);
+    fill: white;
+}
+
+
+.logo{
+    color: var(--primaryBlue);
+
+}
+
+.docs, .gits{
+    display: flex;
+    align-items: center;
+    column-gap: 6rem;
+    fill: var(--darkBlue);
+    transition: all 0.2s;
+}
+
+.docs:hover, .gits:hover{
+    color: var(--primaryBlue);
+    fill: var(--primaryBlue);
+}
+
+.mode{
+    background-color: transparent;
+    border: 2rem solid var(--darkBlue);
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.mode > * {
+    padding: 5rem 10rem;
+    opacity: 0.3;
+    fill: var(--primaryBlue);
+
+}
+
+.mode .active{
+    background-color: white;
+    fill: blue;
+    opacity: 1;
+
+}
+
+@media (max-width: 700px) {
+    .nav{
+        flex-direction: column;
+        gap: 20rem;
+    }
+}

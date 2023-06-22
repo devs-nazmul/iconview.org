@@ -1,0 +1,88 @@
+*,
+::before,
+::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+
+    font-size: 1px;
+
+    --primaryBlue: blue;
+    --lightBlue: #e0e0ff;
+
+    --iconBG: #ffffff;
+
+    --darkBlue: #0e1736;
+    --white: #ffffff;
+    --searchBox: #ffffff;
+
+    --primaryFont: Poppins, sans-serif;
+    --secondaryFont: Poppins, sans-serif;
+
+}
+
+body.dark-mode {
+
+    --primaryBlue: #00ff00;
+    --lightBlue: #0b0b2d;
+    --iconBG: #232349;
+
+    color: white;
+    fill: white;
+    background-color: var(--iconBG);
+
+    --darkBlue: #ebf1ff;
+    --white: #181c4d;
+    --searchBox: var(--iconBG);
+
+
+}
+
+h1 { font-size: 50rem; }
+h2 { font-size: 40rem; }
+h3 { font-size: 30rem; }
+h4 { font-size: 25rem; }
+h5 { font-size: 20rem; }
+h6 { font-size: 15rem; }
+
+li { list-style-type: none; }
+
+img { width: 100%; }
+
+body{
+    font-size: 15rem;
+    font-family: var(--primaryFont);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    max-width: 1350rem;
+    margin: 0 auto;
+}
+
+.innerPadding{
+    padding: 50rem;
+}
+
+.innerPadding-sm{
+    padding: 30rem;
+}
+
+.innerPadding-smm{
+    padding: 15rem;
+}
+
+section{
+    padding: 0 15rem;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}

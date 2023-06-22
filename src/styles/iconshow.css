@@ -1,0 +1,131 @@
+.iconContainer{
+    display: grid;
+    grid-template-columns: 250rem 1fr;
+    margin-top: 20rem;
+    gap: 20rem;
+}
+
+.icon-sidebar{
+    background-color: var(--lightBlue);
+    border-radius: 5rem;
+    align-self: start;
+    overflow: hidden;
+    padding-top: 20rem;
+    padding-bottom: 20rem;
+    transition: all 0.3s;
+}
+
+
+.icon-sidebar button{
+    width: 100%;
+    border: none;
+    padding: 10rem 20rem;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    transition: all 0.3s;
+}
+.icon-sidebar button svg{
+    transition: all 0.3s;
+    font-size: 15rem;
+}
+
+.icon-sidebar button:hover{
+    background-color: var(--primaryBlue);
+    color: white;
+}
+
+.icon-sidebar button:hover svg{
+    fill: white;
+}
+
+.icon-show{
+    background-color: var(--lightBlue);
+    border-radius: 5rem;
+
+}
+
+.iconGrid{
+    display: grid;
+    gap: 15rem;
+    grid-template-columns: repeat(auto-fill, minmax(120rem, 1fr));
+}
+
+.iconBox{
+    background-color: var(--iconBG);
+    border: 2rem solid transparent;
+    min-height: 120rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-action{
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    background-color: var(--lightBlue);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5rem 0;
+}
+
+.icon-action button{
+    border: none;
+    padding: 2rem 10rem;
+    color: blue;
+    border-radius: 2rem;
+    cursor: pointer;
+    background-color: white;
+    align-self: stretch;
+}
+
+.icon-action button svg{
+    fill: blue;
+    font-size: 15rem;
+    padding: 2rem;
+}
+
+.iconBox .icon-copy{
+    position: absolute;
+    top: 10rem;
+    right: 10rem;
+    font-size: 15rem;
+    fill: #c5c5c5 !important;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+}
+
+
+.iconBox:hover :where(.icon-action, .icon-copy){
+    opacity: 1;
+}
+
+.iconBox svg{
+    transition: all 0.3s;
+    font-size: 25rem;
+}
+
+
+.iconBox:hover svg:first-child:not(.icon-action svg){
+    transform: scale(150%) translateY(-10rem);
+    fill: var(--primaryBlue);
+}
+
+
+@media (max-width: 700px) {
+    .iconContainer{
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,34 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**How to use IconView Icons in Next.js** 
 
-## Getting Started
+**STEP 1:**<br/>
+Install Node Package, <br/>
 
-First, run the development server:
+    npm i iconview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**STEP 2:**<br/>
+Add the Configuration in Next Config -- <br/>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+    const nextConfig = {
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+        // Your Others Config
 
-## Learn More
+        webpack: (config, { defaultLoaders }) => {
+            config.module.rules.push({
+                test: /\.+(js|jsx)$/,
+                include: /node_modules[\\/]iconview/,
+                use: defaultLoaders.babel,
+            });
+            return config;
+        },
+    };
+    
+    module.exports = nextConfig;
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br/>
+**STEP 3:**<br/>
+Import Icon into Your Page. Example: Client or Server <br/>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    import { Facebook_Fab } from "iconview/svg/fab/Facebook"
+    import { Wifi_Fas } from "iconview/svg/fas/Wifi"
 
-## Deploy on Vercel
+_note:  
+[https://iconview.org](https://iconview.org) to Search Icons. and copy.<br/><br/>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**STEP 4:**<br/>
+Copy and Paste the style.css Into your global.css file, add at the top -- <br/>
+
+global.css
+
+        @import "iconview/style.css"
+or
+global.css
+        
+        svg.svg-icon {
+        overflow: visible;
+        box-sizing: content-box;
+        }
+        
+        .svg-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        overflow: visible;
+        vertical-align: -0.125em
+        }
+
+
+
+page.js
+    
+    import { Facebook_Fab } from "iconview/svg/fab/Facebook"
+    import { Sun_Far } from "iconview/svg/far/Sun"  
+
+    // Note That Most icon is Less than - 1kb icon
+    
+    export default function Home() {
+        return (
+            <div>
+                <Facebook_Fab/>
+                <Sun_Far className="sun" color="yellow" onClick={handleClick} />
+            </div>
+        )
+    }
+
+
+Example of How to Modify / Style Icons
+
+    .icon{
+    font-size: 20px;
+    fill: black;
+    cursor: pointer;
+    padding: 10px;
+    background-color: lightblue;
+    border-radius: 20%;
+    transition: all 0.3s;
+    }
+    
+    .icon:hover{
+    transform: scale(110%);
+    fill: yellow;
+    background-color: black;
+    }

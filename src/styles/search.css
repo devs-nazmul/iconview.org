@@ -46,3 +46,8 @@
     border: 2rem solid var(--primaryBlue);
 }
 
+@media (max-width: 700px) {
+    .inputSearch{
+        max-width: 95%;
+    }
+}

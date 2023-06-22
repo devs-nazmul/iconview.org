@@ -128,4 +128,8 @@
     .iconContainer{
         grid-template-columns: 1fr;
     }
+
+    .icon-sidebar{
+        display: none;
+    }
 }

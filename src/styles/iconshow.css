@@ -50,13 +50,13 @@
 .iconGrid{
     display: grid;
     gap: 15rem;
-    grid-template-columns: repeat(auto-fill, minmax(120rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(130rem, 1fr));
 }
 
 .iconBox{
     background-color: var(--iconBG);
     border: 2rem solid transparent;
-    min-height: 120rem;
+    min-height: 130rem;
     border-radius: 10rem;
     cursor: pointer;
     display: flex;

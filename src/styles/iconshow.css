@@ -1,6 +1,7 @@
 .iconContainer{
     display: grid;
-    grid-template-columns: 250rem 1fr;
+    grid-template-columns: 1fr;
+    /*grid-template-columns: 250rem 1fr;*/
     margin-top: 20rem;
     gap: 20rem;
 }
@@ -96,21 +97,32 @@
     padding: 2rem;
 }
 
-.iconBox .icon-copy{
+.iconBox :where(.icon-copy, .icon-name){
     position: absolute;
-    top: 10rem;
-    right: 10rem;
-    font-size: 15rem;
+    font-size: 15rem !important;
     fill: #c5c5c5 !important;
     opacity: 0;
     transition: all 0.3s ease-in-out;
-
 }
 
+.iconBox .icon-copy{
+    top: 5rem;
+    right: 10rem;
+}
+.iconBox .icon-name{
+    top: 2rem;
+    left: 10rem;
+    text-transform: capitalize;
+}
 
-.iconBox:hover :where(.icon-action, .icon-copy){
+.iconBox:hover :where(.icon-name, .icon-copy){
+    opacity: 0.3;
+}
+
+.iconBox:hover .icon-action{
     opacity: 1;
 }
+
 
 .iconBox svg{
     transition: all 0.3s;

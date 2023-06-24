@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 
 import Navigation from "@/comp/navigation";
 import Search from "@/comp/search";
-import IconShow from "@/styles/iconShow";
+import IconShow from "@/comp/iconShow";
 import serverFetch from "@/fetch/serverFetch";
 import { initialData } from "@/fetch/initianData";
 

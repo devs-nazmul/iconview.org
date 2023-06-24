@@ -52,6 +52,7 @@ function IconBox({icon, svg}) {
             </div>
 
             <Copy_Far className="icon-copy" />
+            <span className="icon-name"> {svg} </span>
 
         </div>
     );
@@ -68,20 +69,20 @@ export default function iconShow({iconsData}){
 
                 <div className="iconContainer">
 
-                    <div className="icon-sidebar">
-                        <div className="innerPadding-smm">
-                            Want to Sponsor? <br/>
-                            Contact Here
+                    {/*<div className="icon-sidebar">*/}
+                    {/*    <div className="innerPadding-smm">*/}
+                    {/*        Want to Sponsor? <br/>*/}
+                    {/*        Contact Here*/}
 
-                            <Link href={"mailto:belivup@gmail.com"}> - Mail</Link>
+                    {/*        <Link href={"mailto:belivup@gmail.com"}> - Mail</Link>*/}
 
-                            <br/> <br/>
+                    {/*        <br/> <br/>*/}
 
-                            I Do Web Application Dev, <br/>Android & IOS Dev, <br/>Windows & MacOS Software Development.
-                            <br/><br/>Do you have Project? or Need Help? <br/><br/>Let's Get Started... <br/><Link href={"mailto:belivup@gmail.com"}> - Mail</Link>
+                    {/*        I Do Web Application Dev, <br/>Android & IOS Dev, <br/>Windows & MacOS Software Development.*/}
+                    {/*        <br/><br/>Do you have Project? or Need Help? <br/><br/>Let's Get Started... <br/><Link href={"mailto:belivup@gmail.com"}> - Mail</Link>*/}
 
-                        </div>
-                    </div>
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
                     <div className="icon-show innerPadding-smm">
                         <div className="iconGrid">

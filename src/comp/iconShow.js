@@ -35,9 +35,7 @@ function IconBox({ icon }) {
     return (
         <div className="iconBox" onClick={handleCopy} key={Math.random()}>
 
-            <div
-                className={`svg-icon icons`}
-                dangerouslySetInnerHTML={{ __html: svgIcon }} />
+            <div dangerouslySetInnerHTML={{ __html: svgIcon }} />
 
             <div className="icon-action">
                 <button onClick={handleCopy}>{copy? "copied!" : "copy svg"}</button>

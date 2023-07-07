@@ -126,6 +126,10 @@
 
 .iconBox svg{
     transition: all 0.3s;
+    font-size: 16rem;
+}
+.iconBox .duotone{
+    opacity: 0.3;
 }
 
 

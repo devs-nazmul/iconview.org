@@ -117,8 +117,6 @@
 
 .iconBox:hover :where(.icon-name, .icon-copy){
     opacity: 0.3;
-    font-size: 10rem;
-
 }
 
 .iconBox:hover .icon-action{
@@ -128,7 +126,6 @@
 
 .iconBox svg{
     transition: all 0.3s;
-    font-size: 16rem;
 }
 .iconBox .duotone{
     opacity: 0.3;
@@ -138,6 +135,7 @@
 .iconBox:hover svg:first-child:not(.icon-action svg){
     transform: scale(150%) translateY(-10rem);
     fill: var(--primaryBlue);
+    color: var(--primaryBlue);
 }
 
 

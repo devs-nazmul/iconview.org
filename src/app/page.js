@@ -14,7 +14,7 @@ export default function App(){
     const [initData, setInitData] = useState([])
     const [search, setSearch] = useState('')
 
-    const [darkMode, setDarkMode] = useState(true);
+    const [darkMode, setDarkMode] = useState(false);
 
     const handleChange = (e) => {
         setSearch(e.target.value);

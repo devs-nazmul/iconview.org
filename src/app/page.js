@@ -11,7 +11,7 @@ import { initialData } from "@/fetch/initianData";
 
 export default function App(){
 
-    const [initData, setInitData] = useState(initialData)
+    const [initData, setInitData] = useState([])
     const [search, setSearch] = useState('')
 
     const [darkMode, setDarkMode] = useState(true);
@@ -29,11 +29,12 @@ export default function App(){
 
         const fetchData = async () => {
             const data = await serverFetch(search);
-            setInitData(data.data);
+            setInitData(data);
         };
         fetchData();
 
     }, [search])
+
 
     useEffect(() => {
         document.body.classList.toggle("dark-mode", darkMode);

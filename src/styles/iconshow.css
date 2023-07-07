@@ -1,7 +1,7 @@
 .iconContainer{
     display: grid;
-    grid-template-columns: 1fr;
-    /*grid-template-columns: 250rem 1fr;*/
+    /*grid-template-columns: 1fr;*/
+    grid-template-columns: 250rem 1fr;
     margin-top: 20rem;
     gap: 20rem;
 }

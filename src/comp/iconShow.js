@@ -33,8 +33,9 @@ function IconBox({ icon }) {
     const [copy, setCopy] = useState(false);
 
     return (
-        <div className="iconBox" onClick={handleCopy} key={Math.random()}
-             dangerouslySetInnerHTML={{ __html: svgIcon }} >
+        <div className="iconBox" onClick={handleCopy} key={Math.random()}>
+
+            <div role="img" aria-label={usage} dangerouslySetInnerHTML={{ __html: svgIcon }} />
 
             <div className="icon-action">
                 <button onClick={handleCopy}>{copy? "copied!" : "copy svg"}</button>

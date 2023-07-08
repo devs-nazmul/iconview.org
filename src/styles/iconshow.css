@@ -134,7 +134,6 @@
 
 .iconBox:hover svg:first-child:not(.icon-action svg){
     transform: scale(150%) translateY(-10rem);
-    fill: var(--primaryBlue);
     color: var(--primaryBlue);
 }
 

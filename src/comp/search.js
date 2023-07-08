@@ -14,8 +14,8 @@ export default function Search({search, handleChange}){
 
                 <div className="innerPadding-sm search">
 
-                    <h3>35k+ SVG & Vector Icons Download For Free</h3> <br/>
-                    <p className="search_text">Get Access to 35k+ Svg High Quality Vector Icons for web & desktop, <br/> Unlimited Download For Free.</p>
+                    <h3>40k+ SVG & Vector Icons Download For Free</h3> <br/>
+                    <p className="search_text">Get Access to 40k+ Svg High Quality Vector Icons for web & desktop, <br/> Unlimited Download For Free.</p>
                     <br/>
 
                     <div className="searchBox">

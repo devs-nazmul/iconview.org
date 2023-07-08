@@ -1,6 +1,6 @@
 import { useState } from "react";
-import {Download_Far} from "iconview/svg/far/Download";
-import {Copy_Far} from "iconview/svg/far/Copy";
+import { Download_Far } from "iconview/svg/far/Download";
+import { Copy_Far } from "iconview/svg/far/Copy";
 import Link from "next/link";
 
 function IconBox({ icon }) {
@@ -10,7 +10,7 @@ function IconBox({ icon }) {
     const svgIcon = row[Object.keys(row)[0]];
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(`<${usage}" />`);
+        navigator.clipboard.writeText(`<${usage} />`);
         setCopy(true);
         setTimeout(() => {
             setCopy(false);
@@ -38,8 +38,8 @@ function IconBox({ icon }) {
             <div role="img" aria-label={usage} dangerouslySetInnerHTML={{ __html: svgIcon }} />
 
             <div className="icon-action">
-                <button onClick={handleCopy}>{copy? "copied!" : "copy svg"}</button>
-                <button onClick={handleDownload}><Download_Far/></button>
+                <button onClick={handleCopy}>{copy ? "copied!" : "copy svg"}</button>
+                <button onClick={handleDownload}><Download_Far /></button>
             </div>
 
             <Copy_Far className="icon-copy" />
@@ -60,8 +60,8 @@ export default function IconShow({ iconsData }) {
                     <div className="icon-sidebar">
 
                         <div className="innerPadding-smm">
-                            Want to Sponsor? <br/>
-                            <br/> <br/>
+                            Want to Sponsor? <br />
+                            <br /> <br />
 
                         </div>
                     </div>

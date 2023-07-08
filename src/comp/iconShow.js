@@ -10,7 +10,7 @@ function IconBox({ icon }) {
     const svgIcon = row[Object.keys(row)[0]];
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(`<Icon name="${usage}" />`);
+        navigator.clipboard.writeText(`<${usage}" />`);
         setCopy(true);
         setTimeout(() => {
             setCopy(false);

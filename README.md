@@ -30,8 +30,8 @@ Add the Configuration in Next Config -- <br/>
 **STEP 3:**<br/>
 Import Icon into Your Page. Example: Client or Server <br/>
 
-    import { Facebook_Fab } from "iconview/svg/fab/Facebook"
-    import { Wifi_Fas } from "iconview/svg/fas/Wifi"
+    import { Facebook_Fab } from "iconview/svgs/Facebook_Fab"
+    import { Wifi_Fas } from "iconview/svgs/Wifi_Fas"
 
 _note:  
 [https://iconview.org](https://iconview.org) to Search Icons. and copy.<br/><br/>
@@ -63,8 +63,8 @@ global.css
 
 page.js
     
-    import { Facebook_Fab } from "iconview/svg/fab/Facebook"
-    import { Sun_Far } from "iconview/svg/far/Sun"  
+    import { Facebook_Fab } from "iconview/svgs/Facebook_Fab"
+    import { Sun_Far } from "iconview/svgs/Sun_Far"  
 
     // Note That Most icon is Less than - 1kb icon
     
@@ -72,7 +72,7 @@ page.js
         return (
             <div>
                 <Facebook_Fab/>
-                <Sun_Far className="sun" color="yellow" onClick={handleClick} />
+                <Sun_Far className="sun" color="blue" onClick={handleClick} />
             </div>
         )
     }
@@ -82,7 +82,7 @@ Example of How to Modify / Style Icons
 
     .icon{
     font-size: 20px;
-    fill: black;
+    color: blue;
     cursor: pointer;
     padding: 10px;
     background-color: lightblue;
@@ -92,6 +92,5 @@ Example of How to Modify / Style Icons
     
     .icon:hover{
     transform: scale(110%);
-    fill: yellow;
-    background-color: black;
+    color: yellow;
     }

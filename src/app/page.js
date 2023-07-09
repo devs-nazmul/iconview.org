@@ -9,8 +9,6 @@ import serverFetch from "@/fetch/serverFetch";
 
 import { initialData } from "@/fetch/initianData";
 
-
-
 export default function App(){
 
     const [initData, setInitData] = useState(initialData)
@@ -37,7 +35,7 @@ export default function App(){
         const delayFetch = () => {
             setTimeout(() => {
                 fetchData();
-            }, 100); // Delay of 100 milliseconds
+            }, 200); // Delay of 100 milliseconds
         };
 
         delayFetch();

@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 :root{
 
     font-size: 1px;
@@ -14,6 +18,9 @@
     --lightBlue: #e0e0ff;
 
     --iconBG: #ffffff;
+
+    --customColor: var(--primaryBlue) ;
+    --customSize: 25px ;
 
     --darkBlue: #0e1736;
     --white: #ffffff;

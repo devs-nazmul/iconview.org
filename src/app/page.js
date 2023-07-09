@@ -6,6 +6,7 @@ import Navigation from "@/comp/navigation";
 import Search from "@/comp/search";
 import IconShow from "@/comp/iconShow";
 import serverFetch from "@/fetch/serverFetch";
+
 import { initialData } from "@/fetch/initianData";
 
 
@@ -31,7 +32,14 @@ export default function App(){
             const data = await serverFetch(search);
             setInitData(data);
         };
-        fetchData();
+
+        const delayFetch = () => {
+            setTimeout(() => {
+                fetchData();
+            }, 200); // Delay of 100 milliseconds
+        };
+
+        delayFetch();
 
     }, [search])
 
@@ -45,7 +53,7 @@ export default function App(){
         <>
             <Navigation handleMode={handleMode} mode={darkMode} />
             <Search search={search} handleChange={handleChange} />
-            <IconShow iconsData={initData} />
+            <IconShow iconsData={initData} theme={darkMode} />
         </>
     )
 }

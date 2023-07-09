@@ -6,7 +6,6 @@ import {Magnifying_Glass_Fas} from "iconview/svg/fas/Magnifying_Glass";
 
 export default function Search({search, handleChange}){
 
-
     return(
         <section>
 

@@ -36,7 +36,7 @@ export default function App(){
         const delayFetch = () => {
             setTimeout(() => {
                 fetchData();
-            }, 200); // Delay of 100 milliseconds
+            }, 100); // Delay of 100 milliseconds
         };
 
         delayFetch();

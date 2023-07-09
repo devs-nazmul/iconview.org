@@ -10,9 +10,10 @@ import serverFetch from "@/fetch/serverFetch";
 import { initialData } from "@/fetch/initianData";
 
 
+
 export default function App(){
 
-    const [initData, setInitData] = useState([])
+    const [initData, setInitData] = useState(initialData)
     const [search, setSearch] = useState('')
 
     const [darkMode, setDarkMode] = useState(false);

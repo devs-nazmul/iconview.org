@@ -49,7 +49,7 @@ function IconBox({ icon }) {
 
 function SideBar({handleType, type}){
 
-    const [range, setRange] = useState('20')
+    const [range, setRange] = useState('15')
     const [color, setColor] = useState('#0e1736')
 
     function handleChange(e){

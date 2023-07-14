@@ -110,19 +110,6 @@ export default function IconShow({ iconsData, theme }) {
 
     function handleChange(e){
 
-        switch (e.target.name){
-            case 'range':
-                setRange(e.target.value)
-                break
-            case 'color':
-                setColor(e.target.value)
-                break
-
-        }
-    }
-
-    useEffect(() => {
-
         const cssRootModify = (variables) => {
             let stylesheet = document.styleSheets[0];
             let rule = Array.from(stylesheet.cssRules).find(r => r.selectorText === ':root');
@@ -138,7 +125,35 @@ export default function IconShow({ iconsData, theme }) {
             customSize: range+"px"
         })
 
-    }, [color, range, type])
+        switch (e.target.name){
+            case 'range':
+                setRange(e.target.value)
+                break
+            case 'color':
+                setColor(e.target.value)
+                break
+
+        }
+    }
+
+    // useEffect(() => {
+    //
+    //     const cssRootModify = (variables) => {
+    //         let stylesheet = document.styleSheets[0];
+    //         let rule = Array.from(stylesheet.cssRules).find(r => r.selectorText === ':root');
+    //         if (rule) {
+    //             Object.entries(variables).forEach(([name, value]) => {
+    //                 rule.style.setProperty("--" + name, value);
+    //             });
+    //         }
+    //     }
+    //
+    //     cssRootModify({
+    //         customColor: color,
+    //         customSize: range+"px"
+    //     })
+    //
+    // }, [color, range, type])
 
 
     return (

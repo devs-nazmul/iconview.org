@@ -1,9 +1,10 @@
+'use client'
 import { useState, useEffect } from "react";
 import { Download_Far } from "iconview/svg/far/Download";
 import { Copy_Far } from "iconview/svg/far/Copy";
-import Link from "next/link";
+import {cssRootModify} from "@/comp/cssRootModify";
 
-function IconBox({ icon, color, range }) {
+function IconBox({ icon }) {
 
     const { label, usage, row } = icon;
     const svgIcon = row[Object.keys(row)[0]];
@@ -16,24 +17,6 @@ function IconBox({ icon, color, range }) {
         }, 5000);
     };
 
-    useEffect(() => {
-
-        const cssRootModify = (variables) => {
-            let stylesheet = document.styleSheets[0];
-            let rule = Array.from(stylesheet.cssRules).find(r => r.selectorText === ':root');
-            if (rule) {
-                Object.entries(variables).forEach(([name, value]) => {
-                    rule.style.setProperty("--" + name, value);
-                });
-            }
-        }
-
-        cssRootModify({
-            customColor: color,
-            customSize: range+"px"
-        })
-
-    }, [color, range])
 
     const handleDownload = () => {
         const blob = new Blob([svgIcon], { type: "image/svg+xml" });
@@ -66,7 +49,30 @@ function IconBox({ icon, color, range }) {
     );
 }
 
-function SideBar({color, handleChange, range, handleType, type}){
+function SideBar({handleType, type}){
+
+    const [range, setRange] = useState('20')
+    const [color, setColor] = useState('#0e1736')
+
+    function handleChange(e){
+
+        switch (e.target.name){
+            case 'range':
+                setRange(e.target.value)
+                break
+            case 'color':
+                setColor(e.target.value)
+                break
+
+        }
+    }
+
+    useEffect( () => {
+        cssRootModify({
+            customColor: color,
+            customSize: range+"px"
+        })
+    }, [])
 
     return(
         <div>
@@ -87,7 +93,7 @@ function SideBar({color, handleChange, range, handleType, type}){
 
                     <div className="range-box">
                         <span> {range}px </span>
-                        <input name="range" step="5" className='custom-range' min="20" max="60" type="range" value={range} onChange={ handleChange } />
+                        <input name="range" step="5" className='custom-range' min="10" max="50" type="range" value={range} onChange={ handleChange } />
                     </div>
 
                     <div className="color-box">
@@ -103,35 +109,14 @@ function SideBar({color, handleChange, range, handleType, type}){
 export default function IconShow({ iconsData, theme }) {
 
     const [copy, setCopy] = useState(false);
-    const [range, setRange] = useState('25')
-    const [color, setColor] = useState('#0e1736')
     const [type, setType] = useState('all')
 
-    useEffect(() => {
-        if (theme){
-            setColor("#ffffff")
-        } else {
-            setColor("#0e1736")
-        }
-
-    }, [theme])
 
     function handleType(e){
         setType(e)
     }
 
-    function handleChange(e){
 
-        switch (e.target.name){
-            case 'range':
-                setRange(e.target.value)
-                break
-            case 'color':
-                setColor(e.target.value)
-                break
-
-        }
-    }
 
     return (
         <section>
@@ -141,7 +126,7 @@ export default function IconShow({ iconsData, theme }) {
                     <div className="icon-sidebar">
 
                         <div className="innerPadding-smm">
-                            <SideBar handleChange={handleChange} handleType={handleType} range={range} type={type} color={color}  />
+                            <SideBar handleType={handleType}  />
                         </div>
                     </div>
 
@@ -149,7 +134,7 @@ export default function IconShow({ iconsData, theme }) {
                     <div className="icon-show innerPadding-smm">
                         <div className="iconGrid">
                             {iconsData.filter( icon => type ==='all' || type === Object.keys(icon.row)[0] )
-                                .map( icon => <IconBox key={icon.usage} icon={icon} color={color} range={range} /> )
+                                .map( icon => <IconBox key={icon.usage} icon={icon}/> )
                             }
                         </div>
                     </div>

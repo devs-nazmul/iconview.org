@@ -3,7 +3,7 @@ import { Download_Far } from "iconview/svg/far/Download";
 import { Copy_Far } from "iconview/svg/far/Copy";
 import Link from "next/link";
 
-function IconBox({ icon }) {
+function IconBox({ icon, color, range }) {
 
     const { label, usage, row } = icon;
     const svgIcon = row[Object.keys(row)[0]];
@@ -15,6 +15,25 @@ function IconBox({ icon }) {
             setCopy(false);
         }, 5000);
     };
+
+    useEffect(() => {
+
+        const cssRootModify = (variables) => {
+            let stylesheet = document.styleSheets[0];
+            let rule = Array.from(stylesheet.cssRules).find(r => r.selectorText === ':root');
+            if (rule) {
+                Object.entries(variables).forEach(([name, value]) => {
+                    rule.style.setProperty("--" + name, value);
+                });
+            }
+        }
+
+        cssRootModify({
+            customColor: color,
+            customSize: range+"px"
+        })
+
+    }, [color, range])
 
     const handleDownload = () => {
         const blob = new Blob([svgIcon], { type: "image/svg+xml" });
@@ -30,13 +49,6 @@ function IconBox({ icon }) {
     };
 
     const [copy, setCopy] = useState(false);
-
-    const [customColor, setCustomColor] = useState(false);
-    const [customSize, setCustomSize] = useState(false);
-
-    useEffect(() => {
-
-    }, [customColor, customSize])
 
     return (
         <li className="iconBox" onClick={handleCopy} key={Math.random()}>
@@ -121,26 +133,6 @@ export default function IconShow({ iconsData, theme }) {
         }
     }
 
-    useEffect(() => {
-
-        const cssRootModify = (variables) => {
-            let stylesheet = document.styleSheets[0];
-            let rule = Array.from(stylesheet.cssRules).find(r => r.selectorText === ':root');
-            if (rule) {
-                Object.entries(variables).forEach(([name, value]) => {
-                    rule.style.setProperty("--" + name, value);
-                });
-            }
-        }
-
-        cssRootModify({
-            customColor: color,
-            customSize: range+"px"
-        })
-
-    }, [color, range])
-
-
     return (
         <section>
             <div className="container">
@@ -157,7 +149,7 @@ export default function IconShow({ iconsData, theme }) {
                     <div className="icon-show innerPadding-smm">
                         <div className="iconGrid">
                             {iconsData.filter( icon => type ==='all' || type === Object.keys(icon.row)[0] )
-                                .map( icon => <IconBox key={icon.usage} icon={icon} /> )
+                                .map( icon => <IconBox key={icon.usage} icon={icon} color={color} range={range} /> )
                             }
                         </div>
                     </div>

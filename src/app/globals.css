@@ -5,6 +5,13 @@
 @import "../styles/iconshow.css";
 
 
+.iconBox :first-child .svg-icon{
+    font-size: var(--customSize);
+    color: var(--customColor)
+}
+
+
+
 
 
 

@@ -1,5 +1,5 @@
-
-import {useState, useEffect, useRef} from "react";
+'use client'
+import { useState, useEffect } from "react";
 import { Download_Far } from "iconview/svg/far/Download";
 import { Copy_Far } from "iconview/svg/far/Copy";
 import {cssRootModify} from "@/comp/cssRootModify";
@@ -52,9 +52,6 @@ function SideBar({handleType, type}){
     const [range, setRange] = useState('15')
     const [color, setColor] = useState('#0e1736')
 
-    const colorRef = useRef(color);
-    const rangeRef = useRef(range);
-
     function handleChange(e){
 
         switch (e.target.name){
@@ -66,12 +63,14 @@ function SideBar({handleType, type}){
                 break
 
         }
-
-        cssRootModify({
-            customColor: colorRef.current,
-            customSize: rangeRef.current + "px"
-        })
     }
+
+    useEffect( () => {
+        cssRootModify({
+            customColor: color,
+            customSize: range+"px"
+        })
+    }, [color, range])
 
 
     return(

@@ -49,7 +49,7 @@ function IconBox({ icon }) {
 
 function SideBar({handleType, type, theme}){
 
-    const [range, setRange] = useState('15')
+    const [range, setRange] = useState('20')
     const [color, setColor] = useState('#0e1736')
 
     useEffect(() => {
@@ -137,6 +137,7 @@ export default function IconShow({ iconsData, theme }) {
                     <div className="icon-show innerPadding-smm">
                         <div className="iconGrid">
                             {iconsData.filter( icon => type ==='all' || type === Object.keys(icon.row)[0] )
+                                .slice(0, 49)
                                 .map( icon => <IconBox key={icon.usage} icon={icon}/> )
                             }
                         </div>

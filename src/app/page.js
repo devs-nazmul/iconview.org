@@ -51,7 +51,7 @@ export default function App(){
         <>
             <Navigation handleMode={handleMode} mode={darkMode} />
             <Search search={search} handleChange={handleChange} />
-            <IconShow iconsData={initData} />
+            <IconShow iconsData={initData} theme={darkMode} />
         </>
     )
 }

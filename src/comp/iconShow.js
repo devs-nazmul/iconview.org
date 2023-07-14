@@ -47,10 +47,18 @@ function IconBox({ icon }) {
     );
 }
 
-function SideBar({handleType, type}){
+function SideBar({handleType, type, theme}){
 
     const [range, setRange] = useState('15')
     const [color, setColor] = useState('#0e1736')
+
+    useEffect(() => {
+        if (theme){
+            setColor("#ffffff")
+        }
+
+    }, [theme])
+
 
     function handleChange(e){
 
@@ -105,7 +113,7 @@ function SideBar({handleType, type}){
     )
 }
 
-export default function IconShow({ iconsData }) {
+export default function IconShow({ iconsData, theme }) {
 
     const [type, setType] = useState('all')
 
@@ -121,7 +129,7 @@ export default function IconShow({ iconsData }) {
                     <div className="icon-sidebar">
 
                         <div className="innerPadding-smm">
-                            <SideBar handleType={handleType} type={type}  />
+                            <SideBar handleType={handleType} type={type} theme={theme}  />
                         </div>
                     </div>
 

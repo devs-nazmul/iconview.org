@@ -20,7 +20,6 @@ export default function App(){
         setSearch(e.target.value);
     };
 
-
     const handleMode = () => {
         setDarkMode(!darkMode)
     };
@@ -52,7 +51,7 @@ export default function App(){
         <>
             <Navigation handleMode={handleMode} mode={darkMode} />
             <Search search={search} handleChange={handleChange} />
-            <IconShow iconsData={initData} theme={darkMode} />
+            <IconShow iconsData={initData} />
         </>
     )
 }

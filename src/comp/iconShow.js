@@ -8,6 +8,7 @@ function IconBox({ icon }) {
 
     const { label, usage, row } = icon;
     const svgIcon = row[Object.keys(row)[0]];
+    const [copy, setCopy] = useState(false);
 
     const handleCopy = () => {
         navigator.clipboard.writeText(`<${usage} />`);
@@ -16,7 +17,6 @@ function IconBox({ icon }) {
             setCopy(false);
         }, 5000);
     };
-
 
     const handleDownload = () => {
         const blob = new Blob([svgIcon], { type: "image/svg+xml" });
@@ -30,8 +30,6 @@ function IconBox({ icon }) {
         link.click();
         document.body.removeChild(link);
     };
-
-    const [copy, setCopy] = useState(false);
 
     return (
         <li className="iconBox" onClick={handleCopy} key={Math.random()}>
@@ -72,7 +70,8 @@ function SideBar({handleType, type}){
             customColor: color,
             customSize: range+"px"
         })
-    }, [])
+    }, [color, range])
+
 
     return(
         <div>
@@ -106,17 +105,13 @@ function SideBar({handleType, type}){
     )
 }
 
-export default function IconShow({ iconsData, theme }) {
+export default function IconShow({ iconsData }) {
 
-    const [copy, setCopy] = useState(false);
     const [type, setType] = useState('all')
-
 
     function handleType(e){
         setType(e)
     }
-
-
 
     return (
         <section>
@@ -126,7 +121,7 @@ export default function IconShow({ iconsData, theme }) {
                     <div className="icon-sidebar">
 
                         <div className="innerPadding-smm">
-                            <SideBar handleType={handleType}  />
+                            <SideBar handleType={handleType} type={type}  />
                         </div>
                     </div>
 

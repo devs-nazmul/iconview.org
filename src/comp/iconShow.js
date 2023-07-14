@@ -122,8 +122,22 @@ export default function IconShow({ iconsData, theme }) {
     }
 
     useEffect(() => {
-        document.documentElement.style.setProperty('--customColor', color);
-        document.documentElement.style.setProperty('--customSize', range + "px");
+
+        const cssRootModify = (variables) => {
+            let stylesheet = document.styleSheets[0];
+            let rule = Array.from(stylesheet.cssRules).find(r => r.selectorText === ':root');
+            if (rule) {
+                Object.entries(variables).forEach(([name, value]) => {
+                    rule.style.setProperty("--" + name, value);
+                });
+            }
+        }
+
+        cssRootModify({
+            customColor: color,
+            customSize: range+"px"
+        })
+
     }, [color, range, type])
 
 

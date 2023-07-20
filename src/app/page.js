@@ -1,6 +1,7 @@
 'use client'
 
 import {useState, useEffect} from "react";
+import { Analytics } from '@vercel/analytics/react';
 
 import Navigation from "@/comp/navigation";
 import Search from "@/comp/search";
@@ -52,6 +53,7 @@ export default function App(){
             <Navigation handleMode={handleMode} mode={darkMode} />
             <Search search={search} handleChange={handleChange} />
             <IconShow iconsData={initData} theme={darkMode} />
+            <Analytics />
         </>
     )
 }

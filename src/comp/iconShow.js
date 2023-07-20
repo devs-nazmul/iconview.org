@@ -1,8 +1,8 @@
 'use client'
 import { useState, useEffect } from "react";
-import { Download_Far } from "iconview/svg/far/Download";
-import { Copy_Far } from "iconview/svg/far/Copy";
+import { Download_Far } from 'iconview/svgs/Download_Far'
 import {cssRootModify} from "@/comp/cssRootModify";
+import {Copy_Far} from "iconview/svgs/Copy_Far";
 
 function IconBox({ icon }) {
 

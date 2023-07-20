@@ -58,7 +58,7 @@ function SideBar({handleType, type, theme}){
         if (theme){
             setColor("#ffffff")
         } else {
-            setColor("#00ff00")
+            setColor("#0E1736")
         }
 
     }, [theme])

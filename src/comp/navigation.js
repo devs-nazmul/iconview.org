@@ -1,10 +1,12 @@
 
 import Link from "next/link";
-import {Github_Fab} from "iconview/svg/fab/Github";
-import {File_Far} from "iconview/svg/far/File";
-import {Moon_Fas} from "iconview/svg/fas/Moon";
-import {Sun_Bright_Fas} from "iconview/svg/fas/Sun_Bright";
-import {Code_Fas} from "iconview/svg/fas/Code";
+
+import {Code_Fas} from "iconview/svgs/Code_Fas";
+import {Github_Fab} from "iconview/svgs/Github_Fab";
+import {File_Far} from "iconview/svgs/File_Far";
+import {Sun_Bright_Fas} from "iconview/svgs/Sun_Bright_Fas";
+import {Moon_Fas} from "iconview/svgs/Moon_Fas";
+
 
 export default function Navigation({handleMode, mode}){
 

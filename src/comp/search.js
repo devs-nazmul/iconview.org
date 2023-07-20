@@ -1,7 +1,7 @@
 'use client'
 
 import {useEffect, useState} from "react";
-import {Magnifying_Glass_Fas} from "iconview/svg/fas/Magnifying_Glass";
+import {Magnifying_Glass_Fas} from "iconview/svgs/Magnifying_Glass_Fas";
 
 
 export default function Search({search, handleChange}){

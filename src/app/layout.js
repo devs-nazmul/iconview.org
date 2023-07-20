@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 
 export const metadata = {
   title: 'iconview.org',
-  description: 'Get Thousands of SGV icons for Web',
+  description: 'Get Access to 25k+ Svg High Quality Vector Icons for web & desktop, Unlimited Download For Free.\n',
 }
 
 export default function RootLayout({ children }) {

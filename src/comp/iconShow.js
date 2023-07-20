@@ -32,18 +32,20 @@ function IconBox({ icon }) {
     };
 
     return (
-        <li className="iconBox" onClick={handleCopy} key={Math.random()}>
+        <ul>
+            <li className="iconBox" onClick={handleCopy} key={Math.random()}>
 
-            <div role="img" title={"icon " + label} aria-label={"icon " + label} dangerouslySetInnerHTML={{ __html: svgIcon }} />
+                <div role="img" title={"icon " + label} aria-label={"icon " + label} dangerouslySetInnerHTML={{ __html: svgIcon }} />
 
-            <div className="icon-action">
-                <button onClick={handleCopy}>{copy ? "copied!" : "copy svg"}</button>
-                <button onClick={handleDownload}><Download_Far /></button>
-            </div>
+                <div className="icon-action">
+                    <button onClick={handleCopy}>{copy ? "copied!" : "copy svg"}</button>
+                    <button onClick={handleDownload}><Download_Far /></button>
+                </div>
 
-            <Copy_Far className="icon-copy" />
+                <Copy_Far className="icon-copy" />
 
-        </li>
+            </li>
+        </ul>
     );
 }
 
@@ -55,6 +57,8 @@ function SideBar({handleType, type, theme}){
     useEffect(() => {
         if (theme){
             setColor("#ffffff")
+        } else {
+            setColor("#00ff00")
         }
 
     }, [theme])
